@@ -3,6 +3,7 @@ export class RoundsState {
     this.roundsById = {};
     this.fetchInProgress = false;
     this.fetchError = false;
+    this.featched = false;
   }
 }
 

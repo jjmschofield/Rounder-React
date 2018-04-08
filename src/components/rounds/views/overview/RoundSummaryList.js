@@ -9,30 +9,30 @@ export class RoundSummaryList extends Component {
     this.listItemOnClick = this.listItemOnClick.bind(this);
   }
 
+  componentDidMount() {
+    if (!this.props.rounds.fetched) {
+      this.props.fetchRoundsFromApi(0);
+    }
+  }
+
+  getRoundsFromStore() {
+    const rounds = Object.keys(this.props.rounds.roundsById).map((roundId) => {
+      return this.props.rounds.roundsById[ roundId ];
+    });
+
+    rounds.sort((a, b) => {
+      return a.timestamp - b.timestamp;
+    });
+
+    return rounds;
+  }
+
   listItemOnClick(round) {
     this.props.selectHandler(round);
   }
 
-  roundListItems() {
-    const roundData = [
-      {
-        id: 0,
-        timestamp: 1522962029247,
-        barName: 'Some Bar',
-      },
-      {
-        id: 1,
-        timestamp: 1522962029247,
-        barName: 'Some Bar',
-      },
-      {
-        id: 2,
-        timestamp: 1522962029247,
-        barName: 'Some Bar',
-      },
-    ];
-
-    const roundListItems = roundData.map((round) => {
+  createRoundListItems(rounds) {
+    return rounds.map((round) => {
       return (
         <RoundSummaryListItem
           round={round}
@@ -41,14 +41,15 @@ export class RoundSummaryList extends Component {
         />
       );
     });
-
-    return roundListItems;
   }
 
   render() {
+    const rounds = this.getRoundsFromStore();
+    const roundListItems = this.createRoundListItems(rounds);
+
     return (
       <List celled>
-        {this.roundListItems()}
+        {roundListItems}
       </List>
     );
   }

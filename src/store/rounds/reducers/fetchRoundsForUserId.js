@@ -14,6 +14,7 @@ export function updateFetchRoundsForUserIdSuccess(state, action) {
     roundsById: updatedRoundsById,
     fetchInProgress: false,
     fetchError: false,
+    fetched: true,
   });
 }
 

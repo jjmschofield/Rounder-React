@@ -4,13 +4,11 @@ import { fetchRoundsForUser } from '../../../../store/rounds/actions/fetchRounds
 
 const mapStateToProps = (state) => {
   return {
-    rounds: state.rounds.roundsById,
+    rounds: state.rounds,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
-  console.log(arguments);
-  console.log(dispatch);
   return {
     fetchRoundsFromApi: (userId) => {
       dispatch(fetchRoundsForUser(userId));

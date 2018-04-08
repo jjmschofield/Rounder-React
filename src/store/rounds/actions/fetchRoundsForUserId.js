@@ -1,14 +1,14 @@
 import { getAllRoundsForUserId } from '../../../api/roundsApi';
 
-export const FETCH_ROUNDS_FOR_USERID_REQUEST = 'FETCH_ROUNDS_FOR_USERID_REQUEST';
+export const FETCH_ROUNDS_FOR_USER_ID_REQUEST = 'FETCH_ROUNDS_FOR_USER_ID_REQUEST';
 
 function fetchRoundsForUserIdRequest() {
-  return { type: FETCH_ROUNDS_FOR_USERID_REQUEST };
+  return { type: FETCH_ROUNDS_FOR_USER_ID_REQUEST };
 }
 
 export function fetchRoundsForUser(userId) {
   return (dispatch) => {
-    dispatch(fetchRoundsForUserIdRequest);
+    dispatch(fetchRoundsForUserIdRequest());
 
     getAllRoundsForUserId(userId)
       .then(({ data }) => {
@@ -21,14 +21,14 @@ export function fetchRoundsForUser(userId) {
   };
 }
 
-export const FETCH_ROUNDS_FOR_USERID_SUCCESS = 'FETCH_ROUNDS_FOR_USERID_SUCCESS';
+export const FETCH_ROUNDS_FOR_USER_ID_SUCCESS = 'FETCH_ROUNDS_FOR_USER_ID_SUCCESS';
 
 function fetchRoundsForUserIdSuccess(data) {
-  return { type: FETCH_ROUNDS_FOR_USERID_SUCCESS, data };
+  return { type: FETCH_ROUNDS_FOR_USER_ID_SUCCESS, data };
 }
 
-export const FETCH_ROUNDS_FOR_USERID_FAILURE = 'FETCH_ROUNDS_FOR_USERID_FAILURE';
+export const FETCH_ROUNDS_FOR_USER_ID_FAILURE = 'FETCH_ROUNDS_FOR_USER_ID_FAILURE';
 
 function fetchRoundsForUserIdFailure() {
-  return { type: FETCH_ROUNDS_FOR_USERID_FAILURE };
+  return { type: FETCH_ROUNDS_FOR_USER_ID_FAILURE };
 }
