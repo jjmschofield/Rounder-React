@@ -1,4 +1,5 @@
 import { getRoundsForUserId } from '../../../api/roundsApi';
+import { fetchBarsById } from '../../bars/actions/fetchBars';
 
 export const FETCH_ROUNDS_FOR_USER_ID_REQUEST = 'FETCH_ROUNDS_FOR_USER_ID_REQUEST';
 
@@ -13,6 +14,10 @@ export function fetchRoundsForUser(userId) {
     getRoundsForUserId(userId)
       .then(({ data }) => {
         dispatch(fetchRoundsSuccess(data));
+        const barIds = data.rounds.map((round) => {
+          return round.barId;
+        });
+        dispatch(fetchBarsById(barIds));
       })
       .catch((error) => {
         console.error(`Couldn't fetch rounds for user with ID ${userId}`, error);

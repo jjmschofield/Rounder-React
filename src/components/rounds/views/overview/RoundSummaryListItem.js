@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { List } from 'semantic-ui-react';
+import { List, Image } from 'semantic-ui-react';
 
 export class RoundSummaryListItem extends Component {
   constructor(props) {
@@ -12,14 +12,18 @@ export class RoundSummaryListItem extends Component {
   }
 
   render() {
-    return (
-      <List.Item onClick={this.onClick}>
-        <List.Content>
-          <List.Header>{this.props.round.barName}</List.Header>
-          {this.props.round.timestamp}
-        </List.Content>
-      </List.Item>
-    );
+    if (this.props.round && this.props.bar) {
+      return (
+        <List.Item onClick={this.onClick}>
+          <Image size="small" src={this.props.bar.imageUrl} />
+          <List.Content>
+            <List.Header>{this.props.bar.name}</List.Header>
+            {this.props.round.timestamp}
+          </List.Content>
+        </List.Item>
+      );
+    }
+    return [];
   }
 };
 

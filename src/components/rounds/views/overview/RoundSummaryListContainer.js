@@ -5,6 +5,7 @@ import { fetchRoundsForUser } from '../../../../store/rounds/actions/fetchRounds
 const mapStateToProps = (state) => {
   return {
     rounds: state.rounds,
+    bars: state.bars,
   };
 };
 

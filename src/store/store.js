@@ -1,11 +1,13 @@
-import { combineReducers } from 'redux';
-import { createStore as createReduxStore, applyMiddleware } from 'redux';
+import { createStore as createReduxStore, combineReducers, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import { createLogger } from 'redux-logger';
+
 import rounds from './rounds/roundsReducers';
+import bars from './bars/barsReducers';
 
 export function createStore() {
   const reducers = combineReducers({
+    bars,
     rounds,
   });
 

@@ -12,3 +12,11 @@ export function getBarWithId(id) {
   });
   return Promise.resolve({ data: filteredBars[0] });
 }
+
+export function getBarsWithIds(ids) {
+  console.debug('Getting bars with IDs', ids);
+  const filteredBars = barData.filter((bar) => {
+    return ids.indexOf(bar.id) > -1;
+  });
+  return Promise.resolve({ data: { bars: filteredBars } });
+}

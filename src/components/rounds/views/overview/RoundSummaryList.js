@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { List } from 'semantic-ui-react';
+import { List, Dimmer, Loader } from 'semantic-ui-react';
 
 import { RoundSummaryListItem } from './RoundSummaryListItem';
 
@@ -10,9 +10,7 @@ export class RoundSummaryList extends Component {
   }
 
   componentDidMount() {
-    if (!this.props.rounds.fetched) {
-      this.props.fetchRoundsFromApi(0);
-    }
+    this.props.fetchRoundsFromApi(0);
   }
 
   getRoundsFromStore() {
@@ -21,7 +19,7 @@ export class RoundSummaryList extends Component {
     });
 
     rounds.sort((a, b) => {
-      return a.timestamp - b.timestamp;
+      return b.timestamp - a.timestamp;
     });
 
     return rounds;
@@ -36,6 +34,7 @@ export class RoundSummaryList extends Component {
       return (
         <RoundSummaryListItem
           round={round}
+          bar={this.props.bars.barsById[ round.barId ]}
           key={round.id}
           onClick={this.listItemOnClick}
         />
@@ -47,10 +46,17 @@ export class RoundSummaryList extends Component {
     const rounds = this.getRoundsFromStore();
     const roundListItems = this.createRoundListItems(rounds);
 
+    if (!this.props.rounds.fetchInProgress && !this.props.bars.fetchInProgress) {
+      return (
+        <List celled>
+          {roundListItems}
+        </List>
+      );
+    }
     return (
-      <List celled>
-        {roundListItems}
-      </List>
+      <Dimmer active>
+        <Loader inverted>Loading</Loader>
+      </Dimmer>
     );
   }
 }

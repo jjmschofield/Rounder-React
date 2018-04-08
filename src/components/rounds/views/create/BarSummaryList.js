@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import { List } from 'semantic-ui-react';
+import { getBarsNearLocation } from '../../../../api/barsApi';
+
+import { Bar } from '../../../../store/bars/models/Bar';
 
 import { BarSummaryListItem } from './BarSummaryListItem';
 
 export class BarSummaryList extends Component {
   constructor(props) {
     super(props);
+    getBarsNearLocation({ lat: 0, long: 0 });
     this.listItemOnClick = this.listItemOnClick.bind(this);
   }
 
@@ -15,24 +19,9 @@ export class BarSummaryList extends Component {
 
   barListItems() {
     const barData = [
-      {
-        id: 0,
-        distance: 0,
-        name: 'Some Bar',
-        address: 'Some Address',
-      },
-      {
-        id: 1,
-        distance: 0.2,
-        name: 'Some Bar 2',
-        address: 'Some Address',
-      },
-      {
-        id: 2,
-        distance: 0.3,
-        name: 'Some Bar 3',
-        address: 'Some Address',
-      },
+      new Bar({ id: 0, name: 'Some Bar' }),
+      new Bar({ id: 1, name: 'Some Other Bar' }),
+      new Bar({ id: 1, name: 'Some Other Other Bar' }),
     ];
 
     const barListItems = barData.map((bar) => {
