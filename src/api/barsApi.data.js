@@ -26,14 +26,6 @@ export const barData = [
   },
   {
     id: 2,
-    name: 'Bannerman\'s Bar',
-    lat: 0,
-    long: 0,
-    imageUrl: bannermansImg,
-    products: productsData,
-  },
-  {
-    id: 3,
     name: 'Captains Bar',
     lat: 0,
     long: 0,
@@ -41,7 +33,7 @@ export const barData = [
     products: productsData,
   },
   {
-    id: 4,
+    id: 3,
     name: 'The Holyrood 9A',
     lat: 0,
     long: 0,
@@ -49,7 +41,7 @@ export const barData = [
     products: productsData,
   },
   {
-    id: 5,
+    id: 4,
     name: 'The Southern',
     lat: 0,
     long: 0,
@@ -57,7 +49,7 @@ export const barData = [
     products: productsData,
   },
   {
-    id: 6,
+    id: 5,
     name: 'Jazz Bar',
     lat: 0,
     long: 0,
