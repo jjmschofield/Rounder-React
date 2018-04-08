@@ -5,7 +5,7 @@ export function getAllRoundsForUserId(userId) {
   const filteredRounds = roundsData.filter((round) => {
     return round.userId === userId;
   });
-  return Promise.resolve({ data: filteredRounds });
+  return Promise.resolve({ data: { rounds: filteredRounds } });
 }
 
 export default getAllRoundsForUserId;
