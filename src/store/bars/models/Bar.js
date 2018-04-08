@@ -1,12 +1,14 @@
 import { Product } from '../../products/models/Product';
 
 export class Bar {
-  constructor({ id, name, lat, long, products }) {
+  constructor({ id, name, lat, long, distance, products, imageUrl }) {
     this.id = id;
     this.name = name;
     this.lat = lat;
     this.long = long;
+    this.distance = distance;
     this.products = getProductListFromConstructor(products);
+    this.imageUrl = imageUrl;
     Object.seal(this);
   }
 }
