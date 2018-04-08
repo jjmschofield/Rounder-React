@@ -4,9 +4,9 @@ export function fetchBarById(barId) {
   return (dispatch) => {
     dispatch(fetchBarsByIdRequest());
 
-    getBarWithId(barId)
+    return getBarWithId(barId)
       .then(({ data }) => {
-        dispatch(fetchBarsSuccess(data));
+        dispatch(fetchBarsSuccess({ bars: [ data ] }));
       })
       .catch((error) => {
         console.error(`Couldn't fetch bar for ${barId}`, error);
@@ -19,7 +19,7 @@ export function fetchBarsByIds(barIds) {
   return (dispatch) => {
     dispatch(fetchBarsByIdRequest());
 
-    getBarsWithIds(barIds)
+    return getBarsWithIds(barIds)
       .then(({ data }) => {
         dispatch(fetchBarsSuccess(data));
       })

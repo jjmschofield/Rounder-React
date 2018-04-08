@@ -31,7 +31,7 @@ export class BarSummaryList extends Component {
 
   render() {
     return (
-      <List celled>
+      <List divided relaxed>
         {this.barListItems()}
       </List>
     );

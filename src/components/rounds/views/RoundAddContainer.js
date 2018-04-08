@@ -1,12 +1,10 @@
 import { connect } from 'react-redux';
-import { RoundEdit } from './RoundEdit';
+import { RoundAdd } from './RoundAdd';
 import { fetchBarById } from '../../../store/bars/actions/fetchBars';
-import { fetchRoundsForUser } from '../../../store/rounds/actions/fetchRounds';
 
 const mapStateToProps = (state) => {
   return {
-    bars: state.bars.barsById,
-    rounds: state.rounds,
+    bars: state.bars,
   };
 };
 
@@ -15,15 +13,12 @@ const mapDispatchToProps = (dispatch) => {
     fetchBarById: (barId) => {
       return dispatch(fetchBarById(barId));
     },
-    fetchRoundsForUser: (userId) => {
-      dispatch(fetchRoundsForUser(userId));
-    },
   };
 };
 
-const RoundEditContainer = connect(
+const RoundAddContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(RoundEdit);
+)(RoundAdd);
 
-export default RoundEditContainer;
+export default RoundAddContainer;
