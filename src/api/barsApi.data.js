@@ -1,3 +1,5 @@
+import { productsData } from './productsApi.data';
+
 import bannermansImg from '../assets/img/bars/bannermans.jpg';
 import brewDogImg from '../assets/img/bars/brew-dog.jpg';
 import captainsBarImg from '../assets/img/bars/the-captains-bar.jpg';
@@ -12,6 +14,7 @@ export const barData = [
     lat: 0,
     long: 0,
     imageUrl: bannermansImg,
+    products: productsData,
   },
   {
     id: 1,
@@ -19,6 +22,7 @@ export const barData = [
     lat: 0,
     long: 0,
     imageUrl: brewDogImg,
+    products: productsData,
   },
   {
     id: 2,
@@ -26,6 +30,7 @@ export const barData = [
     lat: 0,
     long: 0,
     imageUrl: bannermansImg,
+    products: productsData,
   },
   {
     id: 3,
@@ -33,6 +38,7 @@ export const barData = [
     lat: 0,
     long: 0,
     imageUrl: captainsBarImg,
+    products: productsData,
   },
   {
     id: 4,
@@ -40,6 +46,7 @@ export const barData = [
     lat: 0,
     long: 0,
     imageUrl: nineaImg,
+    products: productsData,
   },
   {
     id: 5,
@@ -47,6 +54,7 @@ export const barData = [
     lat: 0,
     long: 0,
     imageUrl: southernImg,
+    products: productsData,
   },
   {
     id: 6,
@@ -54,7 +62,9 @@ export const barData = [
     lat: 0,
     long: 0,
     imageUrl: jazzBarImg,
+    products: productsData,
   },
 ];
 
+Object.freeze(barData);
 export default barData;
