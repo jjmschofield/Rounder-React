@@ -4,6 +4,8 @@ export class RoundsState {
     this.fetchInProgress = false;
     this.fetchError = false;
     this.featched = false;
+    this.putInProgress = false;
+    this.putError = false;
   }
 }
 

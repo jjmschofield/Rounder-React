@@ -9,9 +9,10 @@ export class RoundsRouter extends Component {
       <BrowserRouter>
         <Switch>
           <Route exact path={ROUNDS_ROUTES.ROOT} component={RoundOverview} />
-          <Route path={ROUNDS_ROUTES.CREATE} component={RoundCreate} />
-          <Route path={`${ROUNDS_ROUTES.EDIT}/:roundId`} component={RoundEdit} />
-          <Route path={`${ROUNDS_ROUTES.VIEW}/:roundId`} component={RoundView} />
+          <Route exact path={ROUNDS_ROUTES.CREATE} component={RoundCreate} />
+          <Route exact path={`${ROUNDS_ROUTES.CREATE}/bar/:barId`} component={RoundEdit} />
+          <Route exact path={`${ROUNDS_ROUTES.EDIT}/:roundId`} component={RoundEdit} />
+          <Route exact path={`${ROUNDS_ROUTES.VIEW}/:roundId`} component={RoundView} />
           <Redirect to="/" />
         </Switch>
       </BrowserRouter>

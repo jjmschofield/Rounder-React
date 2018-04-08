@@ -1,6 +1,21 @@
-import { getBarsWithIds, getBarsNearLocation } from '../../../api/barsApi';
+import { getBarsWithIds, getBarWithId, getBarsNearLocation } from '../../../api/barsApi';
 
-export function fetchBarsById(barIds) {
+export function fetchBarById(barId) {
+  return (dispatch) => {
+    dispatch(fetchBarsByIdRequest());
+
+    getBarWithId(barId)
+      .then(({ data }) => {
+        dispatch(fetchBarsSuccess(data));
+      })
+      .catch((error) => {
+        console.error(`Couldn't fetch bar for ${barId}`, error);
+        dispatch(fetchBarsFailure());
+      });
+  };
+}
+
+export function fetchBarsByIds(barIds) {
   return (dispatch) => {
     dispatch(fetchBarsByIdRequest());
 
@@ -17,7 +32,7 @@ export function fetchBarsById(barIds) {
 
 export function fetchBarsNearby() {
   return (dispatch) => {
-    dispatch(fetchBarsByIdRequest());
+    dispatch(fetchBarsNearbyRequest());
 
     getBarsNearLocation({ lat: 0, long: 0 })
       .then(({ data }) => {
@@ -28,6 +43,12 @@ export function fetchBarsNearby() {
         dispatch(fetchBarsFailure());
       });
   };
+}
+
+export const FETCH_BAR_BY_ID_REQUEST = 'FETCH_BAR_BY_ID_REQUEST';
+
+function fetchBarByIdRequest() {
+  return { type: FETCH_BARS_BY_ID_REQUEST };
 }
 
 export const FETCH_BARS_BY_ID_REQUEST = 'FETCH_BARS_BY_ID_REQUEST';

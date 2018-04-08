@@ -1,4 +1,3 @@
-import { getDistance } from 'geolib';
 import { barData } from './barsApi.data';
 
 export function getBarWithId(id) {

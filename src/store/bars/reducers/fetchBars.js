@@ -1,13 +1,20 @@
 import { Bar } from '../models/Bar';
 
-export function updateFetchBarsByIdInProgress(state) {
+export function fetchBarByIdInProgress(state) {
   return Object.assign({}, state, {
     fetchInProgress: true,
     fetchError: false,
   });
 }
 
-export function updateFetchBarsSuccess(state, action) {
+export function fetchBarsByIdsInProgress(state) {
+  return Object.assign({}, state, {
+    fetchInProgress: true,
+    fetchError: false,
+  });
+}
+
+export function fetchBarsSuccess(state, action) {
   const updatedBarsById = Object.assign({}, state.barsById, addNewBarsFromApiResponse(action.data));
 
   return Object.assign({}, state, {
@@ -28,7 +35,7 @@ function addNewBarsFromApiResponse(data) {
   return newRounds;
 }
 
-export function updateFetchBarsFailure(state) {
+export function fetchBarsFailure(state) {
   return Object.assign({}, state, {
     fetchInProgress: false,
     fetchError: true,

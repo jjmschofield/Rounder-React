@@ -31,7 +31,7 @@ export class RoundCreate extends Component {
   }
 
   selectBarOnClick(bar) {
-    this.props.history.push(`${ROUNDS_ROUTES.EDIT}/${bar.id}`);
+    this.props.history.push(`${ROUNDS_ROUTES.CREATE}/bar/${bar.id}`);
   }
 
   render() {

@@ -1,11 +1,5 @@
 import { getRoundsForUserId } from '../../../api/roundsApi';
-import { fetchBarsById } from '../../bars/actions/fetchBars';
-
-export const FETCH_ROUNDS_FOR_USER_ID_REQUEST = 'FETCH_ROUNDS_FOR_USER_ID_REQUEST';
-
-function fetchRoundsForUserIdRequest() {
-  return { type: FETCH_ROUNDS_FOR_USER_ID_REQUEST };
-}
+import { fetchBarsByIds } from '../../bars/actions/fetchBars';
 
 export function fetchRoundsForUser(userId) {
   return (dispatch) => {
@@ -17,13 +11,19 @@ export function fetchRoundsForUser(userId) {
         const barIds = data.rounds.map((round) => {
           return round.barId;
         });
-        dispatch(fetchBarsById(barIds));
+        dispatch(fetchBarsByIds(barIds));
       })
       .catch((error) => {
         console.error(`Couldn't fetch rounds for user with ID ${userId}`, error);
         dispatch(fetchRoundsFailure());
       });
   };
+}
+
+export const FETCH_ROUNDS_FOR_USER_ID_REQUEST = 'FETCH_ROUNDS_FOR_USER_ID_REQUEST';
+
+function fetchRoundsForUserIdRequest() {
+  return { type: FETCH_ROUNDS_FOR_USER_ID_REQUEST };
 }
 
 export const FETCH_ROUNDS_SUCCESS = 'FETCH_ROUNDS_SUCCESS';

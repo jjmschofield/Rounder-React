@@ -1,28 +1,32 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import { Container, Button, Header, Segment } from 'semantic-ui-react';
 
 export class RoundEdit extends Component {
+  constructor(props) {
+    super(props);
+    const round = {
+      id: 0,
+      barName: 'Some Bar',
+      timestamp: 1522962029247,
+    };
+
+    this.state = {
+      round,
+    };
+  }
+
   render() {
     return (
-      <div>
-        <h1>Round Edit - {this.props.match.params.roundId}</h1>
+      <div className="round-overview-view">
+        <Segment inverted textAlign="center" vertical>
+          <Header size="huge" content={this.state.round.barName} inverted />
+          <Header size="large" content={this.state.round.timestamp} inverted />
+        </Segment>
+        <Container>
+        </Container>
       </div>
     );
   }
 }
-
-RoundEdit.defaultProps = {
-  match: {
-    params: {},
-  },
-};
-
-RoundEdit.propTypes = {
-  match: PropTypes.shape({
-    params: PropTypes.shape({
-      roundId: PropTypes.string.isRequired,
-    }),
-  }),
-};
 
 export default RoundEdit;
