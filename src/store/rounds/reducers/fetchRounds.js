@@ -7,7 +7,7 @@ export function updateFetchRoundsForUserIdInProgress(state) {
   });
 }
 
-export function updateFetchRoundsForUserIdSuccess(state, action) {
+export function updateFetchRoundsSuccess(state, action) {
   const updatedRoundsById = Object.assign({}, state.roundsById, addNewRoundsFromApiResponse(action.data));
 
   return Object.assign({}, state, {
@@ -28,7 +28,7 @@ function addNewRoundsFromApiResponse(data) {
   return newRounds;
 }
 
-export function updateFetchRoundsForUserIdFailure(state) {
+export function updateFetchFailure(state) {
   return Object.assign({}, state, {
     fetchInProgress: false,
     fetchError: true,

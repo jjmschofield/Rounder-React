@@ -1,6 +1,6 @@
 import { roundsData } from './roundsApi.data';
 
-export function getAllRoundsForUserId(userId) {
+export function getRoundsForUserId(userId) {
   console.debug('Getting rounds for user with ID', userId);
   const filteredRounds = roundsData.filter((round) => {
     return round.userId === userId;
@@ -8,4 +8,4 @@ export function getAllRoundsForUserId(userId) {
   return Promise.resolve({ data: { rounds: filteredRounds } });
 }
 
-export default getAllRoundsForUserId;
+export default getRoundsForUserId;
