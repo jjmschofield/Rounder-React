@@ -20,24 +20,24 @@ export class RoundView extends Component {
   }
 
   getRoundFromStore(roundId) {
-    const round = this.props.rounds.roundsById[ roundId ];
+    const round = this.props.rounds.roundsById[roundId];
 
     if (round) {
       return round;
     }
-    else {
-      if (!this.props.rounds.fetchInProgress) {
-        this.props.fetchRoundById(roundId)
-          .catch(() => {
-            this.gotoOverview();
-          });
-      }
-      return null;
+
+    if (!this.props.rounds.fetchInProgress) {
+      this.props.fetchRoundById(roundId)
+        .catch(() => {
+          this.gotoOverview();
+        });
     }
+
+    return null;
   }
 
   getBarFromStore(barId) {
-    const bar = this.props.bars.barsById[ barId ];
+    const bar = this.props.bars.barsById[barId];
     return bar || null;
   }
 
@@ -53,13 +53,13 @@ export class RoundView extends Component {
         return (
           <div className="round-view-view main-view">
             <Segment inverted textAlign="center" vertical>
-              <Divider hidden/>
-              <Header inverted size="huge" content={`Your round @ ${bar.name}`}/>
-              <Header inverted size="small" content={toStandardDateFormat(round.timestamp)}/>
-              <Divider hidden/>
-              <Divider hidden/>
+              <Divider hidden />
+              <Header inverted size="huge" content={`Your round @ ${bar.name}`} />
+              <Header inverted size="small" content={toStandardDateFormat(round.timestamp)} />
+              <Divider hidden />
+              <Divider hidden />
             </Segment>
-            <Divider hidden/>
+            <Divider hidden />
             <Container>
               <Header>
                 <h1>Your Order</h1>
@@ -69,16 +69,16 @@ export class RoundView extends Component {
                 bar={bar}
               />
             </Container>
-            <Divider hidden/>
+            <Divider hidden />
             <Container align="center">
               <Button.Group size="large">
                 <Button onClick={this.gotoOverview} basic color="blue">
-                  <Icon name="arrow left"/>
+                  <Icon name="arrow left" />
                   Back to the Round Overview
                 </Button>
               </Button.Group>
             </Container>
-            <Divider hidden/>
+            <Divider hidden />
           </div>
         );
       }

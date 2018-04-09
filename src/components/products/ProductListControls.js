@@ -6,17 +6,17 @@ export class ProductListControls extends Component {
   getControls() {
     const controls = [
       <Button onClick={this.props.add}>
-        <Icon name="add"/>
+        <Icon name="add" />
         Add Product
       </Button>,
     ];
 
     if (this.props.canSubmit) {
-      controls.push(<Button.Or/>);
+      controls.push(<Button.Or />);
       controls.push(
         <Button onClick={this.props.done} primary>
           To The Bar
-          <Icon name="arrow right"/>
+          <Icon name="arrow right" />
         </Button>);
     }
     return controls;

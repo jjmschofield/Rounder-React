@@ -64,9 +64,8 @@ export class ProductList extends Component {
 
   renderTotal() {
     const totalPrice = this.props.products.reduce((total, product) => {
-        return total + (product.price * product.qty);
-      }, 0
-    );
+      return total + (product.price * product.qty);
+    }, 0);
 
     return (
       <List.Item align="center">
@@ -153,8 +152,10 @@ function removeProduct(product, products) {
 }
 
 ProductList.defaultProps = {
-  productsUpdateHandler: () => {},
-  doneHandler: () => {},
+  productsUpdateHandler: () => {
+  },
+  doneHandler: () => {
+  },
   edit: false,
 };
 

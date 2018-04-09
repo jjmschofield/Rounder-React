@@ -17,15 +17,15 @@ export class BarSummaryListItem extends Component {
   render() {
     return (
       <Card onClick={this.onClick}>
-        <Image src={this.props.bar.imageUrl}/>
+        <Image src={this.props.bar.imageUrl} />
         <Card.Content>
           <Card.Header>{this.props.bar.name}</Card.Header>
-          <Icon name="point"/>{this.props.bar.distance}m away
+          <Icon name="point" />{this.props.bar.distance}m away
         </Card.Content>
       </Card>
     );
   }
-};
+}
 
 BarSummaryListItem.propTypes = {
   bar: PropTypes.objectOf(Bar).isRequired,

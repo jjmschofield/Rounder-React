@@ -18,7 +18,7 @@ export class RoundSummaryList extends Component {
 
   getRoundsFromStore() {
     const rounds = Object.keys(this.props.rounds.roundsById).map((roundId) => {
-      return this.props.rounds.roundsById[ roundId ];
+      return this.props.rounds.roundsById[roundId];
     });
 
     rounds.sort((a, b) => {
@@ -37,7 +37,7 @@ export class RoundSummaryList extends Component {
       return (
         <RoundSummaryListItem
           round={round}
-          bar={this.props.bars.barsById[ round.barId ]}
+          bar={this.props.bars.barsById[round.barId]}
           key={round.id}
           onClick={this.listItemOnClick}
         />

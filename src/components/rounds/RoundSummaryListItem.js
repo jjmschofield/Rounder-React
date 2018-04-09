@@ -20,7 +20,7 @@ export class RoundSummaryListItem extends Component {
     if (this.props.round && this.props.bar) {
       return (
         <Card onClick={this.onClick}>
-          <Image src={this.props.bar.imageUrl}/>
+          <Image src={this.props.bar.imageUrl} />
           <Card.Content>
             <Card.Header>
               {this.props.bar.name}

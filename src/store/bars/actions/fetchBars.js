@@ -2,7 +2,7 @@ import { getBarsWithIds, getBarWithId, getBarsNearLocation } from '../../../api/
 
 export function fetchBarById(barId) {
   return (dispatch) => {
-    dispatch(fetchBarsByIdRequest());
+    dispatch(fetchBarByIdRequest());
 
     return getBarWithId(barId)
       .then(({ data }) => {
@@ -51,7 +51,7 @@ export function fetchBarsNearby() {
 export const FETCH_BAR_BY_ID_REQUEST = 'FETCH_BAR_BY_ID_REQUEST';
 
 function fetchBarByIdRequest() {
-  return { type: FETCH_BARS_BY_ID_REQUEST };
+  return { type: FETCH_BAR_BY_ID_REQUEST };
 }
 
 export const FETCH_BARS_BY_ID_REQUEST = 'FETCH_BARS_BY_ID_REQUEST';

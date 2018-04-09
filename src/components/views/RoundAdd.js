@@ -28,7 +28,7 @@ export class RoundAdd extends Component {
   }
 
   getBarFromStore(barId) {
-    const bar = this.props.bars.barsById[ barId ];
+    const bar = this.props.bars.barsById[barId];
 
     if (bar) {
       return bar;
@@ -73,13 +73,13 @@ export class RoundAdd extends Component {
       return (
         <div className="round-add-view main-view">
           <Segment inverted textAlign="center" vertical>
-            <Divider hidden/>
-            <Header inverted size="huge" content={`Getting the round in @ ${bar.name}`}/>
-            <Header inverted size="small" content={toStandardDateFormat(this.state.round.timestamp)}/>
-            <Divider hidden/>
-            <Divider hidden/>
+            <Divider hidden />
+            <Header inverted size="huge" content={`Getting the round in @ ${bar.name}`} />
+            <Header inverted size="small" content={toStandardDateFormat(this.state.round.timestamp)} />
+            <Divider hidden />
+            <Divider hidden />
           </Segment>
-          <Divider hidden/>
+          <Divider hidden />
           <Container>
             <Header>
               <h1>Your Order</h1>
@@ -97,7 +97,7 @@ export class RoundAdd extends Component {
               <Button onClick={this.goBack} basic>Wait! On second thoughts...</Button>
             </Button.Group>
           </Container>
-          <Divider hidden/>
+          <Divider hidden />
         </div>
       );
     }

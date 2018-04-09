@@ -19,7 +19,7 @@ export class RoundCreate extends Component {
 
   getBars() {
     const bars = Object.keys(this.props.bars.barsById).map((barId) => {
-      return this.props.bars.barsById[ barId ];
+      return this.props.bars.barsById[barId];
     });
 
     bars.sort((a, b) => {
@@ -39,7 +39,7 @@ export class RoundCreate extends Component {
 
   render() {
     const bars = this.getBars();
-    const closestBar = bars[ 0 ];
+    const closestBar = bars[0];
     const otherBars = bars.slice(1);
 
     if (bars.length > 0) {
@@ -48,33 +48,33 @@ export class RoundCreate extends Component {
           <Segment inverted textAlign="center" vertical>
             <Header size="huge" inverted>
               <Header.Content>
-                <Divider hidden/>
+                <Divider hidden />
                 <h1>Looks like you are in {closestBar.name}?</h1>
-                <Divider hidden/>
-                <Image centered size="large" src={closestBar.imageUrl}/>
-                <Divider hidden/>
+                <Divider hidden />
+                <Image centered size="large" src={closestBar.imageUrl} />
+                <Divider hidden />
                 <Button onClick={() => this.selectBarOnClick(closestBar)} primary size="huge">
                   Yep
-                  <Icon name="arrow right"/>
+                  <Icon name="arrow right" />
                 </Button>
-                <Divider hidden/>
-                <Divider hidden/>
+                <Divider hidden />
+                <Divider hidden />
               </Header.Content>
             </Header>
           </Segment>
-          <Divider hidden/>
+          <Divider hidden />
           <Container>
             <Header align="center"><h2>Other Bars Near You</h2></Header>
             <Divider hidden />
-            <BarSummaryList bars={otherBars} selectHandler={this.selectBarOnClick}/>
+            <BarSummaryList bars={otherBars} selectHandler={this.selectBarOnClick} />
           </Container>
-          <Divider hidden/>
+          <Divider hidden />
           <Container align="center">
             <Button.Group fluid size="large">
               <Button onClick={this.goBack} basic>Argh! Get Me Out Of Here!</Button>
             </Button.Group>
           </Container>
-          <Divider hidden/>
+          <Divider hidden />
         </div>
       );
     }

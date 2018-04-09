@@ -27,7 +27,7 @@ export function fetchRoundById(roundId) {
 
     return getRoundById(roundId)
       .then(({ data }) => {
-        dispatch(fetchRoundsSuccess({ rounds: [ data.round ] }));
+        dispatch(fetchRoundsSuccess({ rounds: [data.round] }));
         return dispatch(fetchBarById(data.round.barId));
       })
       .catch((error) => {

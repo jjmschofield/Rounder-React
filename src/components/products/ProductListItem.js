@@ -25,9 +25,9 @@ export class ProductListItem extends Component {
       return (
         <List.Content floated="right">
           <Button.Group size="tiny">
-            <Button onClick={this.onDecrement} icon="minus"/>
-            <Button.Or text={this.props.product.qty}/>
-            <Button onClick={this.onIncrement} positive icon="plus"/>
+            <Button onClick={this.onDecrement} icon="minus" />
+            <Button.Or text={this.props.product.qty} />
+            <Button onClick={this.onIncrement} positive icon="plus" />
           </Button.Group>
         </List.Content>
       );
