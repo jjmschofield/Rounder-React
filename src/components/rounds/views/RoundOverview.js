@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Button, Header, Segment } from 'semantic-ui-react';
+import { Container, Button, Header, Segment, Icon, Divider } from 'semantic-ui-react';
 
 import RoundSummaryList from './overview/RoundSummaryListContainer';
 import { ROUNDS_ROUTES } from '../routers/ROUNDS_ROUTES';
@@ -23,13 +23,24 @@ export class RoundOverview extends Component {
     return (
       <div className="round-overview-view">
         <Segment inverted textAlign="center" vertical>
+          <Divider hidden />
           <Header size="huge" content="Short term memory issues?" inverted />
-          <Header size="large" content="Don't worry, we got you." inverted />
-          <Button onClick={this.createRoundOnClick}>Get a Round In!</Button>
+          <Header size="medium" content="Don't worry, we got you." inverted />
+          <Divider hidden />
+          <Button onClick={this.createRoundOnClick} primary size="huge">
+            Get a Round In
+            <Icon name="arrow right" />
+          </Button>
+          <Divider hidden />
+          <Divider hidden />
         </Segment>
         <Container>
-          <Header size="tiny">Past Rounds</Header>
+          <Divider hidden />
+          <Header align="center">
+            <h2>Past Exploits</h2>
+          </Header>
           <RoundSummaryList selectHandler={this.roundSelectHandler} />
+          <Divider hidden />
         </Container>
       </div>
     );

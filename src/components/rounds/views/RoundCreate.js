@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Button, Header, Segment, Dimmer, Loader, Image } from 'semantic-ui-react';
+import { Container, Button, Header, Segment, Dimmer, Loader, Image, Icon, Divider } from 'semantic-ui-react';
 import { ROUNDS_ROUTES } from '../routers/ROUNDS_ROUTES';
 import { BarSummaryList } from './create/BarSummaryList';
 
@@ -7,14 +7,14 @@ export class RoundCreate extends Component {
   constructor(props) {
     super(props);
     this.selectBarOnClick = this.selectBarOnClick.bind(this);
-    this.goBackOnClick = this.goBackOnClick.bind(this);
+    this.goBack = this.goBack.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchBarsNearby();
   }
 
-  goBackOnClick() {
+  goBack() {
     this.props.history.goBack();
   }
 
@@ -40,21 +40,37 @@ export class RoundCreate extends Component {
     const otherBars = bars.slice(1);
 
     if (bars.length > 0) {
-
       return (
-        <div className="round-create-view">
-          <Segment textAlign="center" vertical>
-            <Image src={closestBar.imageUrl} />
-            <Header size="huge" content={`In ${closestBar.name}?`}/>
-            <Button onClick={() => this.selectBarOnClick(closestBar)}>Yep!</Button>
+        <div className="round-create-view main-view">
+          <Segment inverted textAlign="center" vertical>
+            <Header size="huge" inverted>
+              <Header.Content>
+                <Divider hidden/>
+                <h1>Looks like you are in {closestBar.name}?</h1>
+                <Divider hidden/>
+                <Image centered size="large" src={closestBar.imageUrl}/>
+                <Divider hidden/>
+                <Button onClick={() => this.selectBarOnClick(closestBar)} primary size="huge">
+                  Yep
+                  <Icon name="arrow right"/>
+                </Button>
+                <Divider hidden/>
+                <Divider hidden/>
+              </Header.Content>
+            </Header>
           </Segment>
+          <Divider hidden/>
           <Container>
-            <Header size="tiny">Other Bars Near You</Header>
+            <Header align="center"><h2>Other Bars Near You</h2></Header>
             <BarSummaryList bars={otherBars} selectHandler={this.selectBarOnClick}/>
           </Container>
-          <Container>
-            <Button onClick={this.goBackOnClick}>Argh! Get Me Out Of Here!</Button>
+          <Divider hidden/>
+          <Container align="center">
+            <Button.Group fluid size="large">
+              <Button onClick={this.goBack} basic>Argh! Get Me Out Of Here!</Button>
+            </Button.Group>
           </Container>
+          <Divider hidden/>
         </div>
       );
     }
