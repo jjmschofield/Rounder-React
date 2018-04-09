@@ -1,57 +1,57 @@
 import React, { Component } from 'react';
-import { Container, Button, Header, Segment } from 'semantic-ui-react';
-import { getTime } from 'date-fns';
+import { Container, Button, Header, Segment, Divider } from 'semantic-ui-react';
 
-import { Product } from '../../../store/products/models/Product';
+import { ROUNDS_ROUTES } from '../routers/ROUNDS_ROUTES';
 import { Round } from '../../../store/rounds/models/Round';
 import { RoundProductList } from './add/RoundProductList';
+import { getCurrentTimestamp, toStandardDateFormat } from '../../../utils/dateUtils';
 
 export class RoundAdd extends Component {
   constructor(props) {
     super(props);
 
     const barId = parseInt(this.props.match.params.barId, 10);
-    const bar = this.props.bars.barsById[ barId ];
 
     this.state = {
       barId,
-      bar,
       round: new Round({
         barId,
-        timestamp: getTime(Date.now()),
+        timestamp: getCurrentTimestamp(),
       }),
     };
 
-    if (!this.state.bar) {
+    this.productsUpdateHandler = this.productsUpdateHandler.bind(this);
+    this.submitRound = this.submitRound.bind(this);
+    this.goBack = this.goBack.bind(this);
+  }
+
+  getBarFromStore(barId) {
+    const bar = this.props.bars.barsById[ barId ];
+
+    if (bar) {
+      return bar;
+    }
+    else if (!this.props.bars.fetchInProgress) {
       this.props.fetchBarById(barId)
-        .then(() => {
-          this.setState({
-            bar: this.props.bars.barsById[ barId ],
-          });
+        .catch(() => {
+          this.props.history.push(ROUNDS_ROUTES.ROOT);
         });
     }
 
-    this.addProduct = this.addProduct.bind(this);
-    this.removeProduct = this.removeProduct.bind(this);
+    return null;
   }
 
-  addProduct(product) {
-    const updatedProducts = Array.from(this.state.round.products);
-    const existingProduct = updatedProducts.find((roundProduct) => {
-      return roundProduct.id === product.id;
-    });
+  submitRound() {
+    this.props.putRound(this.state.round)
+      .then((savedRound) => {
+        this.props.history.push(`${ROUNDS_ROUTES.VIEW}/${savedRound.id}`);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }
 
-    if (existingProduct) {
-      existingProduct.qty += 1;
-    }
-    else {
-      updatedProducts.push(new Product({
-        id: product.id,
-        qty: 1,
-        price: product.price,
-      }));
-    }
-
+  productsUpdateHandler(updatedProducts) {
     this.setState({
       round: {
         ...this.state.round,
@@ -60,58 +60,42 @@ export class RoundAdd extends Component {
     });
   }
 
-  removeProduct(product) {
-    let updatedProducts = Array.from(this.state.round.products);
-    const existingProduct = updatedProducts.find((roundProduct) => {
-      return roundProduct.id === product.id;
-    });
-
-    if (existingProduct) {
-      existingProduct.qty -= 1;
-      if (existingProduct.qty < 1) {
-        updatedProducts = updatedProducts.filter((selectedProduct) => {
-          return selectedProduct.id !== existingProduct.id;
-        });
-      }
-
-      this.setState({
-        round: {
-          ...this.state.round,
-          products: updatedProducts,
-        },
-      });
-    }
+  goBack() {
+    this.props.history.goBack();
   }
-
-  getNamedProducts(products) {
-    const namedProducts = Array.from(products);
-
-    return namedProducts.map((product) => {
-      const barProduct = this.state.bar.products.find((barProduct) => {
-        return barProduct.id === product.id;
-      });
-      return Object.assign({}, product, { name: barProduct.name });
-    });
-  }
-
 
   render() {
-    if (this.state.bar && this.state.round) {
+    const bar = this.getBarFromStore(this.state.barId);
+
+    if (bar && this.state.round) {
       return (
-        <div className="round-add-view">
+        <div className="round-add-view main-view">
           <Segment inverted textAlign="center" vertical>
-            <Header size="huge" content={this.state.bar.name} inverted/>
-            <Header size="large" content={this.state.round.timestamp} inverted/>
+            <Divider hidden/>
+            <Header inverted size="huge" content={`Getting the round in @ ${bar.name}`}/>
+            <Header inverted size="small" content={toStandardDateFormat(this.state.round.timestamp)}/>
+            <Divider hidden/>
+            <Divider hidden/>
           </Segment>
+          <Divider hidden/>
           <Container>
+            <Header>
+              <h1>Your Order</h1>
+            </Header>
             <RoundProductList
-              products={this.getNamedProducts(this.state.round.products)}
-              bar={this.state.bar}
-              productDecrementHandler={this.removeProduct}
-              productIncrementHandler={this.addProduct}
-              addProductHandler={this.addProduct}
+              products={this.state.round.products}
+              bar={bar}
+              productsUpdateHandler={this.productsUpdateHandler}
+              doneHandler={this.submitRound}
+              edit
             />
           </Container>
+          <Container>
+            <Button.Group fluid size="large">
+              <Button onClick={this.goBack} basic>Wait! On second thoughts...</Button>
+            </Button.Group>
+          </Container>
+          <Divider hidden/>
         </div>
       );
     }
