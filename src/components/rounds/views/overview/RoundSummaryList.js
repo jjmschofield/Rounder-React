@@ -48,7 +48,7 @@ export class RoundSummaryList extends Component {
 
     if (!this.props.rounds.fetchInProgress && !this.props.bars.fetchInProgress) {
       return (
-        <List divided relaxed>
+        <List divided relaxed size="huge" selection>
           {roundListItems}
         </List>
       );

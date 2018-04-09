@@ -16,16 +16,30 @@ export class RoundProductListItem extends Component {
     this.props.onDecrement(this.props.product);
   }
 
-  render() {
-    return (
-      <List.Item>
-        <List.Content floated='right'>
+  renderControls() {
+    if (this.props.edit) {
+      return (
+        <List.Content floated="right">
           <Button.Group size="tiny">
             <Button onClick={this.onDecrement} icon="minus"/>
             <Button.Or text={this.props.product.qty}/>
             <Button onClick={this.onIncrement} positive icon="plus"/>
           </Button.Group>
         </List.Content>
+      );
+    }
+
+    return (
+      <List.Content floated="right">
+        x {this.props.product.qty}
+      </List.Content>
+    );
+  }
+
+  render() {
+    return (
+      <List.Item>
+        {this.renderControls()}
         <List.Content>
           <List.Header>
             {this.props.product.name}

@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import { List, Modal, Button, Header, Image } from 'semantic-ui-react';
+import { List, Modal, Button, Icon } from 'semantic-ui-react';
 
 export class ProductSelectModal extends Component {
   getListItems() {
     return this.props.products.map((product) => {
       return (
         <List.Item onClick={() => this.props.onSelect(product)}>
+          <Icon name="plus" />
           <List.Content>
             <List.Header>{product.name}</List.Header>
             £{product.price}
@@ -28,7 +29,7 @@ export class ProductSelectModal extends Component {
       <Modal open={this.props.open} style={inlineStyle.modal} onClose={this.props.onClose}>
         <Modal.Header>Select a Product</Modal.Header>
         <Modal.Content>
-          <List divided relaxed size="large">
+          <List divided relaxed selection size="large">
             {this.getListItems()}
           </List>
           <Button positive onClick={this.props.onClose}>Done</Button>
