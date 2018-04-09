@@ -5,16 +5,16 @@ import PropTypes from 'prop-types';
 export class ProductListControls extends Component {
   getControls() {
     const controls = [
-      <Button onClick={this.props.add}>
+      <Button onClick={this.props.add} key="add">
         <Icon name="add" />
         Add Product
       </Button>,
     ];
 
     if (this.props.canSubmit) {
-      controls.push(<Button.Or />);
+      controls.push(<Button.Or key="button" />);
       controls.push(
-        <Button onClick={this.props.done} primary>
+        <Button onClick={this.props.done} key="done" primary>
           To The Bar
           <Icon name="arrow right" />
         </Button>);

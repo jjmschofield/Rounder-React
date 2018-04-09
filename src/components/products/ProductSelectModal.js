@@ -32,7 +32,7 @@ export class ProductSelectModal extends Component {
 function getListItems(products, onSelect) {
   return products.map((product) => {
     return (
-      <List.Item onClick={() => onSelect(product)}>
+      <List.Item onClick={() => onSelect(product)} key={product.id}>
         <Icon name="plus" />
         <List.Content>
           <List.Header>{product.name}</List.Header>
