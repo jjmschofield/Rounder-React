@@ -5,6 +5,7 @@ import { ProductListItem } from './ProductListItem';
 import { ProductListControls } from './ProductListControls';
 import { ProductSelectModal } from './ProductSelectModal';
 import { Product } from '../../store/products/models/Product';
+import { toStandardCurrencyFormat } from '../../utils/currencyUtils';
 
 export class ProductList extends Component {
   constructor(props) {
@@ -69,7 +70,7 @@ export class ProductList extends Component {
       <List.Item align="center">
         <List.Content>
           <List.Header>Total</List.Header>
-          £{totalPrice}
+          {toStandardCurrencyFormat(totalPrice)}
         </List.Content>
       </List.Item>
     );

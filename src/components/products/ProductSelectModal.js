@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { List, Modal, Button, Icon } from 'semantic-ui-react';
+import { toStandardCurrencyFormat } from '../../utils/currencyUtils';
 
 export class ProductSelectModal extends Component {
   getListItems() {
@@ -9,7 +10,7 @@ export class ProductSelectModal extends Component {
           <Icon name="plus" />
           <List.Content>
             <List.Header>{product.name}</List.Header>
-            £{product.price}
+            {toStandardCurrencyFormat(product.price)}
           </List.Content>
         </List.Item>
       );

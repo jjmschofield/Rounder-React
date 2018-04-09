@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { List, Button } from 'semantic-ui-react';
 
+import { toStandardCurrencyFormat } from '../../utils/currencyUtils';
+
 export class ProductListItem extends Component {
   constructor(props) {
     super(props);
@@ -44,7 +46,7 @@ export class ProductListItem extends Component {
           <List.Header>
             {this.props.product.name}
           </List.Header>
-          £{this.props.product.price * this.props.product.qty}
+          {toStandardCurrencyFormat(this.props.product.price * this.props.product.qty)}
         </List.Content>
       </List.Item>
     );
