@@ -2,70 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d545c400-01a8-43be-93bf-3ee73b4474a8" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CREATE_REACT_README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/barsApi.data.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/barsApi.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/productsApi.data.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/roundsApi.data.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/roundsApi.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/img/bars/bannermans.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/img/bars/brew-dog.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/img/bars/the-9a.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/img/bars/the-captains-bar.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/img/bars/the-jazz-bar.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/img/bars/the-southern.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/bars/BarSummaryList.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/bars/BarSummaryListItem.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/products/ProductList.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/products/ProductListControls.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/products/ProductListItem.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/products/ProductSelectModal.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/rounds/RoundSummaryList.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/rounds/RoundSummaryListContainer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/rounds/RoundSummaryListItem.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/routers/ROUNDS_ROUTES.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/routers/RoundsRouter.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/views/RoundAdd.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/views/RoundAddContainer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/views/RoundCreate.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/views/RoundCreateContainer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/views/RoundOverview.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/views/RoundView.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/views/RoundViewContainer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/views/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/registerServiceWorker.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/bars/actions/fetchBars.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/bars/barsReducers.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/bars/models/Bar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/bars/models/BarsState.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/bars/reducers/fetchBars.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/products/models/Product.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/rounds/actions/fetchRounds.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/rounds/actions/putRound.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/rounds/models/Round.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/rounds/models/RoundsState.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/rounds/reducers/fetchRounds.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/rounds/reducers/putRound.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/rounds/roundsReducers.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/store.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/currencyUtils.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/dateUtils.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/service-worker.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -78,7 +16,27 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="8" column="28" lean-forward="true" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="service-worker.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/service-worker.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="23">
+              <caret line="1" column="78" selection-start-line="1" selection-start-column="78" selection-end-line="1" selection-end-column="78" />
+              <caret line="1" column="150" selection-start-line="1" selection-start-column="150" selection-end-line="1" selection-end-column="150" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -110,8 +68,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/components/rounds/views/overview/RoundSummaryList.js" />
-        <option value="$PROJECT_DIR$/src/components/rounds/views/create/BarSummaryListItem.js" />
         <option value="$PROJECT_DIR$/src/components/rounds/views/create/BarSummaryList.js" />
         <option value="$PROJECT_DIR$/src/components/rounds/views/add/ProductSelectModal.js" />
         <option value="$PROJECT_DIR$/src/utils/dates.js" />
@@ -161,6 +117,8 @@
         <option value="$PROJECT_DIR$/src/store/rounds/actions/fetchRounds.js" />
         <option value="$PROJECT_DIR$/src/components/products/ProductListControls.js" />
         <option value="$PROJECT_DIR$/src/components/products/ProductSelectModal.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/service-worker.js" />
       </list>
     </option>
   </component>
@@ -191,7 +149,7 @@
             <path>
               <item name="Rounder-React" type="b2602c69:ProjectViewProjectNode" />
               <item name="Rounder-React" type="462c0819:PsiDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -228,11 +186,11 @@
       <recent name="E:\Projects\Rounder-React" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Projects\Rounder-React" />
       <recent name="E:\Projects\Rounder-React\public" />
       <recent name="E:\Projects\Rounder-React\src\components\rounds" />
       <recent name="E:\Projects\Rounder-React\src\components\bars" />
       <recent name="E:\Projects\Rounder-React\src\components\products" />
-      <recent name="E:\Projects\Rounder-React\src\components" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -247,13 +205,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="npm.build">
+  <component name="RunManager" selected="JavaScript Debug.index.html">
+    <configuration name="index.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Rounder-React/index.html" />
     <list>
       <item itemvalue="npm.start" />
       <item itemvalue="npm.build" />
       <item itemvalue="npm.test" />
       <item itemvalue="npm.lint" />
+      <item itemvalue="JavaScript Debug.index.html" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.index.html" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -269,15 +234,16 @@
       <workItem from="1522875727768" duration="6673000" />
       <workItem from="1522956426470" duration="10670000" />
       <workItem from="1523185655578" duration="58760000" />
-      <workItem from="1523264091071" duration="14264000" />
+      <workItem from="1523264091071" duration="14504000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="90993000" />
+    <option name="totallyTimeSpent" value="91233000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7832512" visible="true" weight="0.18815105" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -312,24 +278,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#22#48#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/react-redux/es/components/connectAdvanced.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-15">
-          <caret line="118" selection-start-line="118" selection-end-line="118" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/store/rounds/reducers/addRounds.js" />
     <entry file="file://$PROJECT_DIR$/src/store/store.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -710,6 +658,21 @@
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="8" column="28" lean-forward="true" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-worker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" column="78" selection-start-line="1" selection-start-column="78" selection-end-line="1" selection-end-column="78" />
+          <caret line="1" column="150" selection-start-line="1" selection-start-column="150" selection-end-line="1" selection-end-column="150" />
         </state>
       </provider>
     </entry>
