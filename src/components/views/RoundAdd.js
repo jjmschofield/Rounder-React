@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Container, Button, Header, Segment, Divider } from 'semantic-ui-react';
+import PropTypes from 'prop-types';
 
 import { ROUNDS_ROUTES } from '../routers/ROUNDS_ROUTES';
+import { BarsState } from '../../store/bars/models/BarsState';
 import { Round } from '../../store/rounds/models/Round';
 import { ProductList } from '../products/ProductList';
 import { getCurrentTimestamp, toStandardDateFormat } from '../../utils/dateUtils';
@@ -99,9 +101,23 @@ export class RoundAdd extends Component {
         </div>
       );
     }
-
     return [];
   }
 }
+
+RoundAdd.propTypes = {
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      barId: PropTypes.node,
+    }).isRequired,
+  }).isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+    goBack: PropTypes.func.isRequired,
+  }).isRequired,
+  bars: PropTypes.objectOf(BarsState).isRequired,
+  fetchBarById: PropTypes.func.isRequired,
+  putRound: PropTypes.func.isRequired,
+};
 
 export default RoundAdd;

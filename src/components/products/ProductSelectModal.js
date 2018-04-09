@@ -1,22 +1,11 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { List, Modal, Button, Icon } from 'semantic-ui-react';
+
 import { toStandardCurrencyFormat } from '../../utils/currencyUtils';
+import { Product } from '../../store/products/models/Product';
 
 export class ProductSelectModal extends Component {
-  getListItems() {
-    return this.props.products.map((product) => {
-      return (
-        <List.Item onClick={() => this.props.onSelect(product)}>
-          <Icon name="plus" />
-          <List.Content>
-            <List.Header>{product.name}</List.Header>
-            {toStandardCurrencyFormat(product.price)}
-          </List.Content>
-        </List.Item>
-      );
-    });
-  }
-
   render() {
     const inlineStyle = {
       modal: {
@@ -31,7 +20,7 @@ export class ProductSelectModal extends Component {
         <Modal.Header>Select a Product</Modal.Header>
         <Modal.Content>
           <List divided relaxed selection size="large">
-            {this.getListItems()}
+            {getListItems(this.props.products, this.props.onSelect)}
           </List>
           <Button positive onClick={this.props.onClose}>Done</Button>
         </Modal.Content>
@@ -39,5 +28,32 @@ export class ProductSelectModal extends Component {
     );
   }
 }
+
+function getListItems(products, onSelect) {
+  return products.map((product) => {
+    return (
+      <List.Item onClick={() => onSelect(product)}>
+        <Icon name="plus" />
+        <List.Content>
+          <List.Header>{product.name}</List.Header>
+          {toStandardCurrencyFormat(product.price)}
+        </List.Content>
+      </List.Item>
+    );
+  });
+}
+
+ProductSelectModal.defaultProps = {
+  onClose: () => {},
+  onSelect: () => {},
+  open: false,
+};
+
+ProductSelectModal.propTypes = {
+  products: PropTypes.arrayOf(Product).isRequired,
+  onSelect: PropTypes.func,
+  open: PropTypes.bool,
+  onClose: PropTypes.func,
+};
 
 export default ProductSelectModal;

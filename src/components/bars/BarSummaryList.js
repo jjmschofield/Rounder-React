@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { Card } from 'semantic-ui-react';
-import { getBarsNearLocation } from '../../api/barsApi';
+import PropTypes from 'prop-types';
 
+import { getBarsNearLocation } from '../../api/barsApi';
 import { BarSummaryListItem } from './BarSummaryListItem';
+import { Bar } from '../../store/bars/models/Bar';
 
 export class BarSummaryList extends Component {
   constructor(props) {
@@ -15,8 +17,8 @@ export class BarSummaryList extends Component {
     this.props.selectHandler(round);
   }
 
-  barListItems() {
-    const barListItems = this.props.bars.map((bar) => {
+  barListItems(bars) {
+    return bars.map((bar) => {
       return (
         <BarSummaryListItem
           bar={bar}
@@ -25,17 +27,20 @@ export class BarSummaryList extends Component {
         />
       );
     });
-
-    return barListItems;
   }
 
   render() {
     return (
       <Card.Group size="huge" itemsPerRow="3" stackable>
-        {this.barListItems()}
+        {this.barListItems(this.props.bars)}
       </Card.Group>
     );
   }
 }
+
+BarSummaryList.propTypes = {
+  bars: PropTypes.arrayOf(Bar).isRequired,
+  selectHandler: PropTypes.func.isRequired,
+};
 
 export default BarSummaryList;

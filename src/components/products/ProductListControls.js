@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { List, Button, Icon } from 'semantic-ui-react';
+import PropTypes from 'prop-types';
 
 export class ProductListControls extends Component {
-
   getControls() {
     const controls = [
       <Button onClick={this.props.add}>
@@ -37,5 +37,19 @@ export class ProductListControls extends Component {
     return [];
   }
 }
+
+ProductListControls.defaultProps = {
+  add: () => {},
+  done: () => {},
+  canSubmit: false,
+  enabled: false,
+};
+
+ProductListControls.propTypes = {
+  add: PropTypes.func,
+  canSubmit: PropTypes.bool,
+  enabled: PropTypes.bool,
+  done: PropTypes.func,
+};
 
 export default ProductListControls;

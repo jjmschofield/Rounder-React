@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
-import { List, Dimmer, Loader, Card } from 'semantic-ui-react';
+import PropTypes from 'prop-types';
+import { Dimmer, Loader, Card } from 'semantic-ui-react';
 
+import { RoundsState } from '../../store/rounds/models/RoundsState';
+import { BarsState } from '../../store/bars/models/BarsState';
 import { RoundSummaryListItem } from './RoundSummaryListItem';
 
 export class RoundSummaryList extends Component {
@@ -60,5 +63,16 @@ export class RoundSummaryList extends Component {
     );
   }
 }
+
+RoundSummaryList.defaultProps = {
+  selectHandler: () => {},
+};
+
+RoundSummaryList.propTypes = {
+  rounds: PropTypes.objectOf(RoundsState).isRequired,
+  bars: PropTypes.objectOf(BarsState).isRequired,
+  fetchRoundsFromApi: PropTypes.func.isRequired,
+  selectHandler: PropTypes.func,
+};
 
 export default RoundSummaryList;

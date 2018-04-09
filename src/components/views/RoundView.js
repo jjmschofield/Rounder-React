@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import { Container, Button, Header, Segment, Divider, Icon } from 'semantic-ui-react';
+import PropTypes from 'prop-types';
 
 import { ROUNDS_ROUTES } from '../routers/ROUNDS_ROUTES';
 import { ProductList } from '../products/ProductList';
 import { toStandardDateFormat } from '../../utils/dateUtils';
+import { RoundsState } from '../../store/rounds/models/RoundsState';
+import { BarsState } from '../../store/bars/models/BarsState';
 
 export class RoundView extends Component {
   constructor(props) {
@@ -83,5 +86,20 @@ export class RoundView extends Component {
     return [];
   }
 }
+
+RoundView.propTypes = {
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      roundId: PropTypes.node,
+    }).isRequired,
+  }).isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+    goBack: PropTypes.func.isRequired,
+  }).isRequired,
+  bars: PropTypes.objectOf(BarsState).isRequired,
+  rounds: PropTypes.objectOf(RoundsState).isRequired,
+  fetchRoundById: PropTypes.func.isRequired,
+};
 
 export default RoundView;

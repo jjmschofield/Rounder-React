@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { List } from 'semantic-ui-react';
 
 import { ProductListItem } from './ProductListItem';
 import { ProductListControls } from './ProductListControls';
 import { ProductSelectModal } from './ProductSelectModal';
 import { Product } from '../../store/products/models/Product';
+import { Bar } from '../../store/bars/models/Bar';
 import { toStandardCurrencyFormat } from '../../utils/currencyUtils';
 
 export class ProductList extends Component {
@@ -149,5 +151,19 @@ function removeProduct(product, products) {
   }
   return updatedProducts;
 }
+
+ProductList.defaultProps = {
+  productsUpdateHandler: () => {},
+  doneHandler: () => {},
+  edit: false,
+};
+
+ProductList.propTypes = {
+  bar: PropTypes.objectOf(Bar).isRequired,
+  doneHandler: PropTypes.func,
+  edit: PropTypes.bool,
+  products: PropTypes.arrayOf(Product).isRequired,
+  productsUpdateHandler: PropTypes.func,
+};
 
 export default ProductList;

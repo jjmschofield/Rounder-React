@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { Image, Card } from 'semantic-ui-react';
 
-import { List, Image, Card } from 'semantic-ui-react';
 import { toStandardDateFormat } from '../../utils/dateUtils';
+import { Round } from '../../store/rounds/models/Round';
+import { Bar } from '../../store/bars/models/Bar';
 
 export class RoundSummaryListItem extends Component {
   constructor(props) {
@@ -29,6 +32,16 @@ export class RoundSummaryListItem extends Component {
     }
     return [];
   }
+}
+
+RoundSummaryListItem.defaultProps = {
+  onClick: () => {},
+};
+
+RoundSummaryListItem.propTypes = {
+  round: PropTypes.objectOf(Round).isRequired,
+  bar: PropTypes.objectOf(Bar).isRequired,
+  onClick: PropTypes.func,
 };
 
 export default RoundSummaryListItem;

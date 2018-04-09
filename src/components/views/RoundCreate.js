@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Container, Button, Header, Segment, Dimmer, Loader, Image, Icon, Divider } from 'semantic-ui-react';
+
 import { ROUNDS_ROUTES } from '../routers/ROUNDS_ROUTES';
 import { BarSummaryList } from '../bars/BarSummaryList';
+import { BarsState } from '../../store/bars/models/BarsState';
 
 export class RoundCreate extends Component {
   constructor(props) {
@@ -14,10 +17,6 @@ export class RoundCreate extends Component {
     this.props.fetchBarsNearby();
   }
 
-  goBack() {
-    this.props.history.goBack();
-  }
-
   getBars() {
     const bars = Object.keys(this.props.bars.barsById).map((barId) => {
       return this.props.bars.barsById[ barId ];
@@ -28,6 +27,10 @@ export class RoundCreate extends Component {
     });
 
     return bars;
+  }
+
+  goBack() {
+    this.props.history.goBack();
   }
 
   selectBarOnClick(bar) {
@@ -83,5 +86,14 @@ export class RoundCreate extends Component {
     );
   }
 }
+
+RoundCreate.propTypes = {
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+    goBack: PropTypes.func.isRequired,
+  }).isRequired,
+  bars: PropTypes.objectOf(BarsState).isRequired,
+  fetchBarsNearby: PropTypes.func.isRequired,
+};
 
 export default RoundCreate;

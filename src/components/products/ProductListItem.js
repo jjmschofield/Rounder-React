@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { List, Button } from 'semantic-ui-react';
+import PropTypes from 'prop-types';
 
 import { toStandardCurrencyFormat } from '../../utils/currencyUtils';
+import { Product } from '../../store/products/models/Product';
 
 export class ProductListItem extends Component {
   constructor(props) {
@@ -51,6 +53,19 @@ export class ProductListItem extends Component {
       </List.Item>
     );
   }
+}
+
+ProductListItem.defaultProps = {
+  onIncrement: () => {},
+  onDecrement: () => {},
+  edit: false,
+};
+
+ProductListItem.propTypes = {
+  product: PropTypes.objectOf(Product).isRequired,
+  onIncrement: PropTypes.func,
+  edit: PropTypes.bool,
+  onDecrement: PropTypes.func,
 };
 
 export default ProductListItem;

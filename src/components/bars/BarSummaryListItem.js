@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { Card, Icon, Image } from 'semantic-ui-react';
+import PropTypes from 'prop-types';
+
+import { Bar } from '../../store/bars/models/Bar';
 
 export class BarSummaryListItem extends Component {
   constructor(props) {
@@ -22,6 +25,11 @@ export class BarSummaryListItem extends Component {
       </Card>
     );
   }
+};
+
+BarSummaryListItem.propTypes = {
+  bar: PropTypes.objectOf(Bar).isRequired,
+  onClick: PropTypes.func.isRequired,
 };
 
 export default BarSummaryListItem;
