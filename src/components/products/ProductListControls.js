@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { List, Button, Icon } from 'semantic-ui-react';
 
-export class RoundProductListControls extends Component {
+export class ProductListControls extends Component {
 
   getControls() {
     const controls = [
@@ -38,4 +38,4 @@ export class RoundProductListControls extends Component {
   }
 }
 
-export default RoundProductListControls;
+export default ProductListControls;

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { RoundCreate } from './RoundCreate';
-import { fetchBarsNearby } from '../../../store/bars/actions/fetchBars';
+import { fetchBarsNearby } from '../../store/bars/actions/fetchBars';
 
 const mapStateToProps = (state) => {
   return {

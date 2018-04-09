@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { List } from 'semantic-ui-react';
-import { getBarsNearLocation } from '../../../../api/barsApi';
+import { getBarsNearLocation } from '../../api/barsApi';
 
 import { BarSummaryListItem } from './BarSummaryListItem';
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import { List, Image, Icon } from 'semantic-ui-react';
-import { toStandardDateFormat} from '../../../../utils/dateUtils';
+import { List, Image } from 'semantic-ui-react';
+import { toStandardDateFormat } from '../../utils/dateUtils';
 
 export class RoundSummaryListItem extends Component {
   constructor(props) {

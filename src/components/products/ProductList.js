@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { List } from 'semantic-ui-react';
 
-import { RoundProductListItem } from './RoundProductListItem';
-import { RoundProductListControls } from './RoundProductListControls';
+import { ProductListItem } from './ProductListItem';
+import { ProductListControls } from './ProductListControls';
 import { ProductSelectModal } from './ProductSelectModal';
-import { Product } from '../../../../store/products/models/Product';
+import { Product } from '../../store/products/models/Product';
 
-export class RoundProductList extends Component {
+export class ProductList extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -46,7 +46,7 @@ export class RoundProductList extends Component {
     if (products.length > 0) {
       return products.map((product) => {
         return (
-          <RoundProductListItem
+          <ProductListItem
             product={product}
             onIncrement={this.incrementProduct}
             onDecrement={this.decrementProduct}
@@ -82,7 +82,7 @@ export class RoundProductList extends Component {
           <List divided relaxed selection size="large">
             {this.renderListItems()}
             {this.renderTotal()}
-            <RoundProductListControls
+            <ProductListControls
               done={this.props.doneHandler}
               add={this.toggleProductSelectModal}
               enabled={this.props.edit}
@@ -149,4 +149,4 @@ function removeProduct(product, products) {
   return updatedProducts;
 }
 
-export default RoundProductList;
+export default ProductList;

@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { RoundAdd } from './RoundAdd';
-import { fetchBarById } from '../../../store/bars/actions/fetchBars';
-import { putRound } from '../../../store/rounds/actions/putRound';
+import { fetchBarById } from '../../store/bars/actions/fetchBars';
+import { putRound } from '../../store/rounds/actions/putRound';
 
 const mapStateToProps = (state) => {
   return {

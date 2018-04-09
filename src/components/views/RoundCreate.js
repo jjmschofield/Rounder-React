@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Button, Header, Segment, Dimmer, Loader, Image, Icon, Divider } from 'semantic-ui-react';
 import { ROUNDS_ROUTES } from '../routers/ROUNDS_ROUTES';
-import { BarSummaryList } from './create/BarSummaryList';
+import { BarSummaryList } from '../bars/BarSummaryList';
 
 export class RoundCreate extends Component {
   constructor(props) {

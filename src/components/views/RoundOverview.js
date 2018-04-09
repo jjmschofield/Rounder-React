@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Button, Header, Segment, Icon, Divider } from 'semantic-ui-react';
 
-import RoundSummaryList from './overview/RoundSummaryListContainer';
+import RoundSummaryList from '../rounds/RoundSummaryListContainer';
 import { ROUNDS_ROUTES } from '../routers/ROUNDS_ROUTES';
 
 export class RoundOverview extends Component {

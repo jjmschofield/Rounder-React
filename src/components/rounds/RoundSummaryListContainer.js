@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { RoundSummaryList } from './RoundSummaryList';
-import { fetchRoundsForUser } from '../../../../store/rounds/actions/fetchRounds';
+import { fetchRoundsForUser } from '../../store/rounds/actions/fetchRounds';
 
 const mapStateToProps = (state) => {
   return {

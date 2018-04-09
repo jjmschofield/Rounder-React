@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { List, Button } from 'semantic-ui-react';
 
-export class RoundProductListItem extends Component {
+export class ProductListItem extends Component {
   constructor(props) {
     super(props);
     this.onIncrement = this.onIncrement.bind(this);
@@ -51,4 +51,4 @@ export class RoundProductListItem extends Component {
   }
 };
 
-export default RoundProductListItem;
+export default ProductListItem;

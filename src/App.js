@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { RoundsRouter } from './components/rounds/routers/RoundsRouter';
+import { RoundsRouter } from './components/routers/RoundsRouter';
 import './App.css';
 
 class App extends Component {

@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Container, Button, Header, Segment, Divider, Icon } from 'semantic-ui-react';
 
 import { ROUNDS_ROUTES } from '../routers/ROUNDS_ROUTES';
-import { RoundProductList } from './add/RoundProductList';
-import { toStandardDateFormat } from '../../../utils/dateUtils';
+import { ProductList } from '../products/ProductList';
+import { toStandardDateFormat } from '../../utils/dateUtils';
 
 export class RoundView extends Component {
   constructor(props) {
@@ -61,7 +61,7 @@ export class RoundView extends Component {
               <Header>
                 <h1>Your Order</h1>
               </Header>
-              <RoundProductList
+              <ProductList
                 products={round.products}
                 bar={bar}
               />

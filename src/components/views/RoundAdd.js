@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { Container, Button, Header, Segment, Divider } from 'semantic-ui-react';
 
 import { ROUNDS_ROUTES } from '../routers/ROUNDS_ROUTES';
-import { Round } from '../../../store/rounds/models/Round';
-import { RoundProductList } from './add/RoundProductList';
-import { getCurrentTimestamp, toStandardDateFormat } from '../../../utils/dateUtils';
+import { Round } from '../../store/rounds/models/Round';
+import { ProductList } from '../products/ProductList';
+import { getCurrentTimestamp, toStandardDateFormat } from '../../utils/dateUtils';
 
 export class RoundAdd extends Component {
   constructor(props) {
@@ -82,7 +82,7 @@ export class RoundAdd extends Component {
             <Header>
               <h1>Your Order</h1>
             </Header>
-            <RoundProductList
+            <ProductList
               products={this.state.round.products}
               bar={bar}
               productsUpdateHandler={this.productsUpdateHandler}
