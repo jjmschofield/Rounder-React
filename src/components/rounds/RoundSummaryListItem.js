@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { List, Image } from 'semantic-ui-react';
+import { List, Image, Card } from 'semantic-ui-react';
 import { toStandardDateFormat } from '../../utils/dateUtils';
 
 export class RoundSummaryListItem extends Component {
@@ -16,15 +16,15 @@ export class RoundSummaryListItem extends Component {
   render() {
     if (this.props.round && this.props.bar) {
       return (
-        <List.Item onClick={this.onClick}>
-          <Image size="medium" src={this.props.bar.imageUrl}/>
-          <List.Content>
-            <List.Header>
+        <Card onClick={this.onClick}>
+          <Image src={this.props.bar.imageUrl}/>
+          <Card.Content>
+            <Card.Header>
               {this.props.bar.name}
-            </List.Header>
+            </Card.Header>
             @ {toStandardDateFormat(this.props.round.timestamp)}
-          </List.Content>
-        </List.Item>
+          </Card.Content>
+        </Card>
       );
     }
     return [];

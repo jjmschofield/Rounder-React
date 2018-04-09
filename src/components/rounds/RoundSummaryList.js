@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { List, Dimmer, Loader } from 'semantic-ui-react';
+import { List, Dimmer, Loader, Card } from 'semantic-ui-react';
 
 import { RoundSummaryListItem } from './RoundSummaryListItem';
 
@@ -48,9 +48,9 @@ export class RoundSummaryList extends Component {
 
     if (!this.props.rounds.fetchInProgress && !this.props.bars.fetchInProgress) {
       return (
-        <List divided relaxed size="huge" selection>
+        <Card.Group size="huge" itemsPerRow="3" stackable>
           {roundListItems}
-        </List>
+        </Card.Group>
       );
     }
     return (

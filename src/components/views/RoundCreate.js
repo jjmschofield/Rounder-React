@@ -62,6 +62,7 @@ export class RoundCreate extends Component {
           <Divider hidden/>
           <Container>
             <Header align="center"><h2>Other Bars Near You</h2></Header>
+            <Divider hidden />
             <BarSummaryList bars={otherBars} selectHandler={this.selectBarOnClick}/>
           </Container>
           <Divider hidden/>

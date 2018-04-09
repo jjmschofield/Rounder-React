@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { List } from 'semantic-ui-react';
+import { Card } from 'semantic-ui-react';
 import { getBarsNearLocation } from '../../api/barsApi';
 
 import { BarSummaryListItem } from './BarSummaryListItem';
@@ -31,9 +31,9 @@ export class BarSummaryList extends Component {
 
   render() {
     return (
-      <List divided relaxed size="huge" selection>
+      <Card.Group size="huge" itemsPerRow="3" stackable>
         {this.barListItems()}
-      </List>
+      </Card.Group>
     );
   }
 }

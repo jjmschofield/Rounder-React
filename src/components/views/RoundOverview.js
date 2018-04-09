@@ -39,6 +39,7 @@ export class RoundOverview extends Component {
           <Header align="center">
             <h2>Past Exploits</h2>
           </Header>
+          <Divider hidden />
           <RoundSummaryList selectHandler={this.roundSelectHandler} />
           <Divider hidden />
         </Container>
