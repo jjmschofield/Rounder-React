@@ -9,17 +9,26 @@ export function getRoundsForUserId(userId) {
   return Promise.resolve({ data: { rounds: filteredRounds } });
 }
 
-export function createRound(barId) {
-  console.debug('Creating Round in Bar', barId);
+export function getRoundById(roundId) {
+  console.debug('Getting round', roundId);
+  const filteredRounds = roundsData.filter((round) => {
+    return round.id === roundId;
+  });
+
+  if (filteredRounds.length > 0) {
+    return Promise.resolve({ data: { round: filteredRounds[ 0 ] } });
+  }
+  return Promise.reject();
+}
+
+export function createRound(round) {
+  console.debug('Creating Round', round);
   return Promise.resolve({
     data: {
-      rounds: [
-        {
-          id: getTime(Date.now()),
-          barId,
-          timestamp: getTime(Date.now()),
-        },
-      ],
+      round: {
+        ...round,
+        id: getTime(Date.now()),
+      },
     },
   });
 }

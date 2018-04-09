@@ -1,5 +1,12 @@
 import { Round } from '../models/Round';
 
+export function fetchRoundByIdInProgress(state) {
+  return Object.assign({}, state, {
+    fetchInProgress: true,
+    fetchError: false,
+  });
+}
+
 export function updateFetchRoundsForUserIdInProgress(state) {
   return Object.assign({}, state, {
     fetchInProgress: true,

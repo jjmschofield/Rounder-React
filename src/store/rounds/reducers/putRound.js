@@ -18,13 +18,10 @@ export function updatePutRoundSuccess(state, action) {
 }
 
 function addNewRoundsFromApiResponse(data) {
-  const newRounds = {};
-
-  data.rounds.forEach((round) => {
-    newRounds[ round.id ] = new Round(round);
-  });
-
-  return newRounds;
+  console.log(data);
+  return {
+    [data.round.id]: new Round(data.round),
+  };
 }
 
 export function updatePutFailure(state) {

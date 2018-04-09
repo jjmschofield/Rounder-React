@@ -1,16 +1,18 @@
 import { createRound } from '../../../api/roundsApi';
 
-export function putRound(barId) {
+export function putRound(round) {
   return (dispatch) => {
     dispatch(putRoundRequest());
 
-    createRound(barId)
+    return createRound(round)
       .then(({ data }) => {
         dispatch(putRoundSuccess(data));
+        return (data.round);
       })
       .catch((error) => {
-        console.error(`Couldn't put rounds for Bar ${barId}`, error);
+        console.error('Couldn\'t create round', error);
         dispatch(putRoundFailure());
+        return Promise.reject();
       });
   };
 }

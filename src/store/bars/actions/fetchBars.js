@@ -11,6 +11,7 @@ export function fetchBarById(barId) {
       .catch((error) => {
         console.error(`Couldn't fetch bar for ${barId}`, error);
         dispatch(fetchBarsFailure());
+        return Promise.reject();
       });
   };
 }
@@ -26,6 +27,7 @@ export function fetchBarsByIds(barIds) {
       .catch((error) => {
         console.error(`Couldn't fetch bars for ${barIds}`, error);
         dispatch(fetchBarsFailure());
+        return Promise.reject();
       });
   };
 }
@@ -41,6 +43,7 @@ export function fetchBarsNearby() {
       .catch((error) => {
         console.error('Couldn\'t fetch bars nearby', error);
         dispatch(fetchBarsFailure());
+        return Promise.reject();
       });
   };
 }
